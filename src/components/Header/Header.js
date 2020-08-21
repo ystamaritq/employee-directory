@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
-const HeaderTop = () => {
+const Header = ({ title, subtitle, displayError = false }) => {
+	const [showError, setShowError] = useState(displayError);
+
 	return (
-		<div className="p-4 custom-style">
-			<h1 className="text-white">Employee Directory</h1>
-			<h4 className="text-white text-muted">
-				Click in the arrow to filter the results
+		<div data-testid="header" className="p-4 custom-style">
+			<h1
+				data-testid="header-title"
+				className="text-white"
+				onClick={() => setShowError(!showError)}
+			>
+				{title}
+			</h1>
+			<h4 data-testid="header-subtitle" className="text-white text-muted">
+				{subtitle}
 			</h4>
+			<p data-testid="header-error" hidden={!showError}>
+				This is an error
+			</p>
 		</div>
 	);
 };
 
-export default HeaderTop;
+export default Header;
