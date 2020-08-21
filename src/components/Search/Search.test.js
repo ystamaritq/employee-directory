@@ -9,11 +9,24 @@ import Search from "./Search";
 
 describe("search", () => {
 	test("verify input is given", async () => {
-		const nameValue = "input name given to search";
-
-		const { baseElement, getByTestId } = render(<Search name={nameValue} />);
+		const searchNameFieldId = "search-name-field";
+		const nameValue = "test search";
+		var name = "";
+		const setValue = (value) => {
+			name = value;
+			console.log(value);
+		};
+		const { baseElement, getByTestId } = render(
+			<Search value={nameValue} onValueChange={setValue} />
+		);
 		expect(baseElement).toBeInTheDocument();
 		expect(baseElement).toBeVisible();
-		expect(getByTestId("search-name")).not.toBeNull();
+		expect(getByTestId(searchNameFieldId)).not.toBeNull();
+		expect(getByTestId(searchNameFieldId)).toHaveValue(nameValue);
+		const testInputValue = "Pizza";
+		fireEvent.change(getByTestId(searchNameFieldId), {
+			target: { value: testInputValue },
+		});
+		expect(name).toEqual(testInputValue);
 	});
 });
