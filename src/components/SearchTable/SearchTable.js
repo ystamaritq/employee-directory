@@ -18,14 +18,14 @@ const SearchTable = ({ data, asc, sort }) => {
 									placement="bottom"
 									overlay={<Tooltip id="tooltip-asc">Asc</Tooltip>}
 								>
-									<FontAwesomeIcon icon={faArrowDown} size="md" />
+									<FontAwesomeIcon icon={faArrowDown} size="sm" />
 								</OverlayTrigger>
 							) : (
 								<OverlayTrigger
 									placement="bottom"
 									overlay={<Tooltip id="tooltip-desc">Desc</Tooltip>}
 								>
-									<FontAwesomeIcon icon={faArrowUp} size="md" />
+									<FontAwesomeIcon icon={faArrowUp} size="sm" />
 								</OverlayTrigger>
 							)}
 						</th>
