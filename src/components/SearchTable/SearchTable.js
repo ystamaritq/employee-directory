@@ -1,6 +1,8 @@
 import React from "react";
-import { Table, Image } from "react-bootstrap";
+import { Table, Image, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "./style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const SearchTable = ({ data, asc, sort }) => {
 	return (
@@ -10,7 +12,22 @@ const SearchTable = ({ data, asc, sort }) => {
 					<tr>
 						<th className="custom-style-table-text">Image</th>
 						<th className="custom-style-table-text" onClick={sort}>
-							Name {asc ? "(asc)" : "(desc)"}
+							Name{" "}
+							{asc ? (
+								<OverlayTrigger
+									placement="bottom"
+									overlay={<Tooltip id="tooltip-asc">Asc</Tooltip>}
+								>
+									<FontAwesomeIcon icon={faArrowDown} size="md" />
+								</OverlayTrigger>
+							) : (
+								<OverlayTrigger
+									placement="bottom"
+									overlay={<Tooltip id="tooltip-desc">Desc</Tooltip>}
+								>
+									<FontAwesomeIcon icon={faArrowUp} size="md" />
+								</OverlayTrigger>
+							)}
 						</th>
 						<th className="custom-style-table-text">Phone</th>
 						<th className="custom-style-table-text">Email</th>
