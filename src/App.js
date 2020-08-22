@@ -8,7 +8,31 @@ import axios from "axios";
 const App = () => {
 	const [filteredUsers, setFilteredUsers] = useState([]);
 	const [allUsers, setAllUsers] = useState([]);
+	const [sortAsc, setSortAsc] = useState(true);
 
+	/**
+	 * Utility function to sort array of users
+	 * @param {*} users original array
+	 * @param {*} desc sort descending
+	 */
+	const sortUsers = (users, asc) => {
+		users.sort((a, b) =>
+			fullNameLowerCase(a).localeCompare(fullNameLowerCase(b))
+		);
+		if (!asc) users.reverse();
+		return users;
+	};
+
+	/**
+	 * Utility function to get a users full name
+	 * @param {*} user the user
+	 */
+	const fullNameLowerCase = (user) =>
+		(user.name.first + " " + user.name.last).toLocaleLowerCase();
+
+	/**
+	 * Load users from `randomuser` API
+	 */
 	const loadUsersFromApi = async () => {
 		var config = {
 			method: "get",
@@ -17,25 +41,34 @@ const App = () => {
 
 		await axios(config)
 			.then(function (res) {
-				setFilteredUsers(res.data.results);
-				setAllUsers(res.data.results);
+				let users = res.data.results;
+				users = sortUsers(users, sortAsc);
+				setFilteredUsers(users);
+				setAllUsers(users);
 			})
 			.catch(function (error) {
 				console.log(error);
 			});
 	};
 
+	/**
+	 * Filter users by the name, respect previous sorting order
+	 * @param {*} search
+	 */
 	const filterUsersbyName = (search) => {
 		// convert input to lower case for easier match
 		const searchLowerCase = search.toLocaleLowerCase();
-		// utility function to get a users full name
-		const fullNameLowerCase = (user) =>
-			(user.name.first + " " + user.name.last).toLocaleLowerCase();
 		// filter users from All User availables
 		let filteredUsers = allUsers.filter((u) =>
 			fullNameLowerCase(u).includes(searchLowerCase)
 		);
-		setFilteredUsers(filteredUsers);
+		setFilteredUsers(sortUsers(filteredUsers, sortAsc));
+	};
+
+	const sortFilteredUsersByName = () => {
+		let order = !sortAsc;
+		setSortAsc(order);
+		setFilteredUsers(sortUsers(filteredUsers, order));
 	};
 
 	useEffect(() => {
@@ -49,7 +82,11 @@ const App = () => {
 				subtitle="Click in the arrow to filter the results"
 			/>
 			<Search name="" onValueChange={(search) => filterUsersbyName(search)} />
-			<SearchTable data={filteredUsers} />
+			<SearchTable
+				asc={sortAsc}
+				data={filteredUsers}
+				sort={() => sortFilteredUsersByName()}
+			/>
 		</div>
 	);
 };
