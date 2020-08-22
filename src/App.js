@@ -6,7 +6,7 @@ import Search from "./components/Search/Search";
 import SearchTable from "./components/SearchTable/SearchTable";
 import testData from "./test-data.json";
 
-function App() {
+const App = () => {
 	const data = testData.results;
 	return (
 		<div className="App">
@@ -18,6 +18,6 @@ function App() {
 			<SearchTable data={data} />
 		</div>
 	);
-}
+};
 
 export default App;

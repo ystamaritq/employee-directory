@@ -3,7 +3,6 @@ import { Table, Image } from "react-bootstrap";
 import "./style.css";
 
 const SearchTable = ({ data }) => {
-	console.log(data);
 	return (
 		<div>
 			<Table responsive="sm">
@@ -22,10 +21,20 @@ const SearchTable = ({ data }) => {
 							<td>
 								<Image thumbnail src={user.picture.thumbnail} />
 							</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td>
+								<div className="text-custom-color">
+									{user.name.first + " " + user.name.last}
+								</div>
+							</td>
+							<td>
+								<div className="text-custom-color">{user.phone}</div>
+							</td>
+							<td>
+								<div className="text-custom-color">{user.email}</div>
+							</td>
+							<td>
+								<div className="text-custom-color">{user.dob.date}</div>
+							</td>
 						</tr>
 					))}
 				</tbody>
