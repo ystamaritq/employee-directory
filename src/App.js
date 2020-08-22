@@ -79,7 +79,7 @@ const App = () => {
 		<div className="App">
 			<Header
 				title="Employee Directory"
-				subtitle="Click in the arrow to filter the results"
+				subtitle="Click in the arrow to sort the users by name"
 			/>
 			<Search name="" onValueChange={(search) => filterUsersbyName(search)} />
 			<SearchTable
