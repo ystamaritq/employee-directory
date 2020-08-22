@@ -6,8 +6,8 @@ import SearchTable from "./components/SearchTable/SearchTable";
 import axios from "axios";
 
 const App = () => {
-	const [users, setUsers] = useState([]);
-	// const [search, setSearch] = useState('');
+	const [filteredUsers, setFilteredUsers] = useState([]);
+	const [allUsers, setAllUsers] = useState([]);
 
 	const loadUsersFromApi = async () => {
 		var config = {
@@ -17,11 +17,25 @@ const App = () => {
 
 		await axios(config)
 			.then(function (res) {
-				setUsers(res.data.results);
+				setFilteredUsers(res.data.results);
+				setAllUsers(res.data.results);
 			})
 			.catch(function (error) {
 				console.log(error);
 			});
+	};
+
+	const filterUsersbyName = (search) => {
+		// convert input to lower case for easier match
+		const searchLowerCase = search.toLocaleLowerCase();
+		// utility function to get a users full name
+		const fullNameLowerCase = (user) =>
+			(user.name.first + " " + user.name.last).toLocaleLowerCase();
+		// filter users from All User availables
+		let filteredUsers = allUsers.filter((u) =>
+			fullNameLowerCase(u).includes(searchLowerCase)
+		);
+		setFilteredUsers(filteredUsers);
 	};
 
 	useEffect(() => {
@@ -34,8 +48,8 @@ const App = () => {
 				title="Employee Directory"
 				subtitle="Click in the arrow to filter the results"
 			/>
-			<Search name="" onValueChange={(value) => console.log(value)} />
-			<SearchTable data={users} />
+			<Search name="" onValueChange={(search) => filterUsersbyName(search)} />
+			<SearchTable data={filteredUsers} />
 		</div>
 	);
 };
