@@ -19,7 +19,7 @@
 
 ## Project Description
 
-Employee directory using React. An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
+This project hosts the source code for my Employee directory using React. An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
 
 ---
 
@@ -60,13 +60,23 @@ Based on _random users_ free **API** `https://randomuser.me/api/?results=200&nat
 
 Follow the installation instructions in order to successfully test this application
 
-#### Installation Instructions
+#### Installing / Getting Started
 
-**Steps**
+**Initial Configuration:**
 
-## -
+- Make sure **node.js** is installed in your machine. If not is installed in your machine [click here](https://nodejs.org/en/) to download the application.
 
-## -
+**Getting Started**
+
+- Clone the following project into a your **local file** system git clone https://github.com/ystamaritq/employee-directory.git
+
+- Run `npm install` or `npm i` in your terminal in order to install all required node modules listed in the _package.json_.
+
+- Then run `npm start` in order to start locally the App.
+
+- Additionally you can run the **test cases** using `npm test`.
+
+---
 
 ## Technologies
 
@@ -97,16 +107,17 @@ The dependencies listed below are all dependecies used by the App.
 
   - bellow is a list of the react-scripts using by the App:
 
-  ```
+```
+
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
 
-  ```
+```
 
 <details>
-  <summary>reference package json image (click to expand)</summary>
+<summary>reference package json image (click to expand)</summary>
 <img src="./images/package.png" width = "400px">
 </details>
 
@@ -126,7 +137,7 @@ The dependencies listed below are all dependecies used by the App.
 
 <img src="./images/demo.png" width = "800px">
 
-The following images demonstrates the application functionality:
+#### The following images demonstrates the application functionality:
 
 <details>
 <summary>Employee Directory Demo Images (click to expand)</summary>
@@ -136,8 +147,12 @@ The following images demonstrates the application functionality:
 <img src="./images/d1.png" width = "800px">
 </details>
 
-![Try it out!](https://employee-directory-platform.herokuapp.com/)
+[Deployed link: Try it out!](https://employee-directory-platform.herokuapp.com/) </div>
 
 ---
 
 [Table of Contents](#table-of-contents)
+
+```
+
+```
