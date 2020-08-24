@@ -125,9 +125,17 @@ The dependencies listed below are all dependecies used by the App.
 This React App use `jest` to develop the test cases. Also _code climate_ and _ci/circle_ as integrations to check the code quality and optimization.
 
 <details>
-<summary>reference code climate - ci/circle and heroku (click to expand)</summary>
+<summary>reference code climate code coverage image (click to expand)</summary>
 <img src="./images/code.png" width = "400px">
+</details>
+
+<details>
+<summary>reference ci circle image (click to expand)</summary>
 <img src="./images/circle.png" width = "400px">
+</details>
+
+<details>
+<summary>reference heroku ci check (click to expand)</summary>
 <img src="./images/heroku.png" width = "400px">
 </details>
 
