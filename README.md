@@ -24,7 +24,7 @@
 
 ## Project Description
 
-An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
+Employee directory using React. An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
 
 ---
 
@@ -54,8 +54,10 @@ Based on _random users_ free **API** `https://randomuser.me/api/?results=200&nat
 
 ## Application MVP
 
-- The user can **sort** by one category (**name** _asc_ & _desc_).
-- The user can **search** by _name_.
+- The user can **sort** the table by at least one category
+  - table sort by: **name** _asc_ & _desc_
+- The user can **filter** by at least one property
+  - filter by **name**
 
 ---
 
