@@ -125,17 +125,18 @@ The dependencies listed below are all dependecies used by the App.
 ## App Demo
 
 <img src="./images/demo.png" width = "800px">
-[Try it out!](https://employee-directory-platform.herokuapp.com/)
 
 The following images demonstrates the application functionality:
 
 <details>
 <summary>Employee Directory Demo Images (click to expand)</summary>
-<img src="./images/d1.png" width = "800px">
 <img src="./images/d2.png" width = "800px">
 <img src="./images/d3.png" width = "800px">
 <img src="./images/d4.png" width = "800px">
+<img src="./images/d1.png" width = "800px">
 </details>
+
+![Try it out!](https://employee-directory-platform.herokuapp.com/)
 
 ---
 
