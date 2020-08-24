@@ -1,9 +1,5 @@
 # Employee Directory
 
-<p align="center">
- <img src="readme/imgs/logo.png" alt="wedding planner logo" width="400px">
-</p>
-
 ---
 
 ### Table of Contents
