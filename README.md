@@ -9,6 +9,7 @@
 - [Installation](#installation)
 - [Technologies](#technologies)
 - [Dependencies](#depencencies)
+- [Test Cases](#test-cases)
 - [Reference Links](#reference-links)
   - [Employee Directory Application Live Link](https://employee-directory-platform.herokuapp.com/)
   - [Employee Directory Application GitHub Repo](https://github.com/ystamaritq/employee-directory)
@@ -60,8 +61,6 @@ Based on _random users_ free **API** `https://randomuser.me/api/?results=200&nat
 
 Follow the installation instructions in order to successfully test this application
 
-#### Installing / Getting Started
-
 **Initial Configuration:**
 
 - Make sure **node.js** is installed in your machine. If not is installed in your machine [click here](https://nodejs.org/en/) to download the application.
@@ -82,38 +81,36 @@ Follow the installation instructions in order to successfully test this applicat
 
 Here is a list of all technologies used to develop this platform.
 
-- `Node.js - An asynchronous event-driven JavaScript runtime`
-- `React.js - A JavaScript library for building user interfaces`
-- `Code Climate - Provides automated code review for test coverage, maintainability and more so that you can save time and merge with confidence`
-- `CircleCI - A modern continuous integration and continuous delivery (CI/CD) platform that automates build, test, and deployment of software.`
-- `Heroku - A platform as a service (PaaS) that enables to build, run, and operate applications entirely in the cloud.`
+- `Node.js` - An asynchronous event-driven JavaScript runtime
+- `React.js` - A JavaScript library for building user interfaces
+- `Code Climate` - Provides automated code review for test coverage, maintainability and more so that you can save time and merge with confidence
+- `CircleCI` - A modern continuous integration and continuous delivery (CI/CD) platform that automates build, test, and deployment of software
+- `Heroku` - A platform as a service (PaaS) that enables to build, run, and operate applications entirely in the cloud
 
 ## Dependencies
 
 The dependencies listed below are all dependecies used by the App.
 
-- `@fortawesome` : Build and manage icons and typefaces in a single place, then serve them with a single line of code.
+- `@fortawesome` : Build and manage icons and typefaces in a single place, then serve them with a single line of code
   - `@fortawesome/fontawesome-svg-core`
   - `@fortawesome/free-solid-svg-icons`
   - `@fortawesome/react-fontawesome`
-- `@testing-library` : A very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices.
+- `@testing-library` : A very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices
   - `@testing-library/jest-dom`
   - `@testing-library/react`
   - `@testing-library/user-event`
-- `axios` : Promise based HTTP client for the browser and node.js.
-- `react-bootstrap` : The most popular front-end framework.
-- `react-dom` : The entry point to the DOM and server renderers for React. It is intended to be paired with the generic React package, which is shipped as react to npm.
-- `react-scripts` : Includes scripts and configuration used by Create React App.
+- `axios` : Promise based HTTP client for the browser and node.js
+- `react-bootstrap` : The most popular front-end framework
+- `react-dom` : The entry point to the DOM and server renderers for React. It is intended to be paired with the generic React package, which is shipped as react to npm
+- `react-scripts` : Includes scripts and configuration used by Create React App
 
   - bellow is a list of the react-scripts using by the App:
 
 ```
-
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-
 ```
 
 <details>
@@ -122,6 +119,50 @@ The dependencies listed below are all dependecies used by the App.
 </details>
 
 ---
+
+## Test Cases
+
+This React App use `jest` one of the most popular test runner these days to develop the test cases. Also _code climate_ and _ci/circle_
+
+Full _test example_ for **Search.js** component
+
+```
+
+// import dependecies
+import React from "react";
+// import react-testing methods (destructuring the methods in the library)
+import { render, fireEvent } from "@testing-library/react";
+// add custom jest matchers from jest-dom
+import "@testing-library/jest-dom/extend-expect";
+// import the component to test
+import Search from "./Search";
+
+describe("search", () => {
+	test("verify input is given", async () => {
+		const searchNameFieldId = "search-name-field";
+		const nameValue = "test search";
+		var name = "";
+		const setValue = (value) => {
+			name = value;
+			console.log(value);
+		};
+		const { baseElement, getByTestId } = render(
+			<Search value={nameValue} onValueChange={setValue} />
+		);
+		expect(baseElement).toBeInTheDocument();
+		expect(baseElement).toBeVisible();
+		expect(getByTestId(searchNameFieldId)).not.toBeNull();
+		expect(getByTestId(searchNameFieldId)).toHaveValue(nameValue);
+		const testInputValue = "Project";
+		fireEvent.change(getByTestId(searchNameFieldId), {
+			target: { value: testInputValue },
+		});
+		expect(name).toEqual(testInputValue);
+	});
+});
+
+
+```
 
 ## Reference Links
 
@@ -152,7 +193,3 @@ The dependencies listed below are all dependecies used by the App.
 ---
 
 [Table of Contents](#table-of-contents)
-
-```
-
-```
