@@ -1,7 +1,5 @@
 # Employee Directory
 
----
-
 ### Table of Contents
 
 - [Project Description](#project-description)
@@ -15,6 +13,7 @@
   - [Employee Directory Application Live Link](https://employee-directory-platform.herokuapp.com/)
   - [Employee Directory Application GitHub Repo](https://github.com/ystamaritq/employee-directory)
   - [Employee Directory Project Board](https://github.com/ystamaritq/employee-directory/projects/1)
+- [App Demo](#app-demo)
 
 ---
 
@@ -42,8 +41,8 @@ Based on _random users_ free **API** `https://randomuser.me/api/?results=200&nat
 **Random Users API** allows to be used as placeholders. The API can return multiple results, as well as specify generated user details such as gender, email, image, username, address, title, first and last name, and more.
 
 <details>
-  <summary>Click to expand!</summary>
-<img src="./images/users.png" width = "400px">
+  <summary>reference user api image (click to expand)</summary>
+<img src="./images/users.png" width = "800px">
 </details>
 
 ---
@@ -67,10 +66,40 @@ Here is a list of all technologies used to develop this platform.
 
 - `Node.js - An asynchronous event-driven JavaScript runtime`
 - `React.js - A JavaScript library for building user interfaces`
+- `Code Climate - Provides automated code review for test coverage, maintainability and more so that you can save time and merge with confidence`
+- `CircleCI - A modern continuous integration and continuous delivery (CI/CD) platform that automates build, test, and deployment of software.`
 
 ## Dependencies
 
-The dependencies listed below are all the **npm** packages used by the App.
+The dependencies listed below are all dependecies used by the App.
+
+- `@fortawesome` : Build and manage icons and typefaces in a single place, then serve them with a single line of code.
+  - `@fortawesome/fontawesome-svg-core`
+  - `@fortawesome/free-solid-svg-icons`
+  - `@fortawesome/react-fontawesome`
+- `@testing-library` : A very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices.
+  - `@testing-library/jest-dom`
+  - `@testing-library/react`
+  - `@testing-library/user-event`
+- `axios` : Promise based HTTP client for the browser and node.js.
+- `react-bootstrap` : The most popular front-end framework.
+- `react-dom` : The entry point to the DOM and server renderers for React. It is intended to be paired with the generic React package, which is shipped as react to npm.
+- `react-scripts` : Includes scripts and configuration used by Create React App.
+
+  - bellow is a list of the react-scripts using by the App:
+
+  ```
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+
+  ```
+
+<details>
+  <summary>reference package json image (click to expand)</summary>
+<img src="./images/package.png" width = "700px">
+</details>
 
 ---
 
