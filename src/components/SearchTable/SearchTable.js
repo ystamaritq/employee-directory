@@ -52,7 +52,9 @@ const SearchTable = ({ data, asc, sort }) => {
 								<div className="text-custom-color">{user.email}</div>
 							</td>
 							<td>
-								<div className="text-custom-color">{user.dob.date}</div>
+								<div className="text-custom-color">
+									{new Date(user.dob.date).toLocaleDateString()}
+								</div>
 							</td>
 						</tr>
 					))}
