@@ -1,5 +1,9 @@
 # Employee Directory
 
+![code climate](https://img.shields.io/codeclimate/coverage/ystamaritq/employee-directory)
+![ci/circle](https://img.shields.io/circleci/build/github/ystamaritq/employee-directory/master)
+![GitHub language count](https://img.shields.io/github/languages/count/ystamaritq/employee-directory)
+
 ### Table of Contents
 
 - [Project Description](#project-description)
