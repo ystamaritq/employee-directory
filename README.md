@@ -58,7 +58,15 @@ Based on _random users_ free **API** `https://randomuser.me/api/?results=200&nat
 
 ## Installation
 
-Installation Instructions
+Follow the installation instructions in order to successfully test this application
+
+#### Installation Instructions
+
+**Steps**
+
+## -
+
+## -
 
 ## Technologies
 
@@ -68,6 +76,7 @@ Here is a list of all technologies used to develop this platform.
 - `React.js - A JavaScript library for building user interfaces`
 - `Code Climate - Provides automated code review for test coverage, maintainability and more so that you can save time and merge with confidence`
 - `CircleCI - A modern continuous integration and continuous delivery (CI/CD) platform that automates build, test, and deployment of software.`
+- `Heroku - A platform as a service (PaaS) that enables to build, run, and operate applications entirely in the cloud.`
 
 ## Dependencies
 
@@ -98,7 +107,7 @@ The dependencies listed below are all dependecies used by the App.
 
 <details>
   <summary>reference package json image (click to expand)</summary>
-<img src="./images/package.png" width = "700px">
+<img src="./images/package.png" width = "400px">
 </details>
 
 ---
@@ -110,6 +119,22 @@ The dependencies listed below are all dependecies used by the App.
 - Link to **GitHub Repo** used for application development - [Employee Directory Application GitHub Repo](https://github.com/ystamaritq/employee-directory)
 
 - Link to **project board** used for application development - [Project Board](https://github.com/ystamaritq/employee-directory/projects/1)
+
+---
+
+## App Demo
+
+<img src="./images/demo.png" width = "800px">
+
+The following images demonstrates the application functionality:
+
+<details>
+<summary>Employee Directory Demo Images (click to expand)</summary>
+<img src="./images/d1.png" width = "800px">
+<img src="./images/d2.png" width = "800px">
+<img src="./images/d3.png" width = "800px">
+<img src="./images/d4.png" width = "800px">
+</details>
 
 ---
 
