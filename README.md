@@ -122,18 +122,27 @@ The dependencies listed below are all dependecies used by the App.
 
 ## Test Cases
 
-This React App use `jest` one of the most popular test runner these days to develop the test cases. Also _code climate_ and _ci/circle_
+This React App use `jest` to develop the test cases. Also _code climate_ and _ci/circle_ as integrations to check the code quality and optimization.
 
 Full _test example_ for **Search.js** component
+
+<details>
+<summary>reference code climate and ci/circle (click to expand)</summary>
+<img src="./images/code.png" width = "400px">
+<img src="./images/circle.png" width = "400px">
+</details>
 
 ```
 
 // import dependecies
 import React from "react";
-// import react-testing methods (destructuring the methods in the library)
+
+// destructuring the methods in the library
 import { render, fireEvent } from "@testing-library/react";
+
 // add custom jest matchers from jest-dom
 import "@testing-library/jest-dom/extend-expect";
+
 // import the component to test
 import Search from "./Search";
 
@@ -160,7 +169,6 @@ describe("search", () => {
 		expect(name).toEqual(testInputValue);
 	});
 });
-
 
 ```
 
