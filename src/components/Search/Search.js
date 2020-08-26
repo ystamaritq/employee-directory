@@ -12,7 +12,10 @@ const Search = ({ value, onValueChange }) => {
 						data-testid="search-name-field"
 						placeholder="Search Employee by Name"
 						value={value}
-						onChange={(e) => onValueChange(e.target.value)}
+						onChange={(e) => {
+							e.preventDefault();
+							onValueChange(e.target.value);
+						}}
 					/>
 				</Col>
 			</Form.Row>
