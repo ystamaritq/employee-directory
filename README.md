@@ -173,10 +173,18 @@ This React App use `jest` to develop the test cases. Also _code climate_ and _ci
 
 <details>
 <summary>Employee Directory Demo Images (click to expand)</summary>
+<img src="./images/d1.png" width = "800px">
 <img src="./images/d2.png" width = "800px">
 <img src="./images/d3.png" width = "800px">
 <img src="./images/d4.png" width = "800px">
-<img src="./images/d1.png" width = "800px">
+</details>
+
+<details>
+<summary>Employee Directory Devices (Responsive) (click to expand)</summary>
+<img src="./images/d5.png" width = "800px">
+<img src="./images/d6.png" width = "800px">
+<img src="./images/d7.png" width = "800px">
+<img src="./images/d8.png" width = "800px">
 </details>
 
 [Deployed link: Try it out!](https://employee-directory-platform.herokuapp.com/) </div>
