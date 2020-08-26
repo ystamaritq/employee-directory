@@ -78,17 +78,24 @@ const App = () => {
 
 	return (
 		<Container fluid className="App p-0">
-			<Header
-				title="Employee Directory"
-				subtitle="Click in the arrow to sort the users by name"
-			/>
-			<Search name="" onValueChange={(search) => filterUsersbyName(search)} />
+			<Row>
+				<Col>
+					<Header
+						title="Employee Directory"
+						subtitle="Click in the arrow to sort the users by name"
+					/>
+					<Search
+						name=""
+						onValueChange={(search) => filterUsersbyName(search)}
+					/>
 
-			<SearchTable
-				asc={sortAsc}
-				data={filteredUsers}
-				sort={() => sortFilteredUsersByName()}
-			/>
+					<SearchTable
+						asc={sortAsc}
+						data={filteredUsers}
+						sort={() => sortFilteredUsersByName()}
+					/>
+				</Col>
+			</Row>
 		</Container>
 	);
 };
