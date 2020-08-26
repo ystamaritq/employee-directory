@@ -26,7 +26,7 @@ td,
 th {
 	padding: 6px;
 	border: 1px solid #ccc;
-	text-align: left;
+	text-align: center;
 }
 
 @media only screen and (max-width: 500px),
