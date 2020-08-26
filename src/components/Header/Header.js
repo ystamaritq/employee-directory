@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { Row, Col } from "react-bootstrap";
 import "./style.css";
 
 const Header = ({ title, subtitle, displayError = false }) => {
 	const [showError, setShowError] = useState(displayError);
 
 	return (
-		<div data-testid="header" className="p-4 custom-style">
+		<div className="p-3 custom-style" data-testid="header">
 			<h1
 				data-testid="header-title"
 				className="text-white"

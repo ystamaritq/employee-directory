@@ -7,7 +7,7 @@ import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 const SearchTable = ({ data, asc, sort }) => {
 	return (
 		<div>
-			<Table responsive="sm">
+			<Table className="table responsive table-striped table-bordered table-sm">
 				<thead>
 					<tr>
 						<th className="custom-style-table-text">Image</th>
