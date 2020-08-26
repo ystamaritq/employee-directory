@@ -4,7 +4,7 @@ import "./style.css";
 
 const Search = ({ value, onValueChange }) => {
 	return (
-		<Form className="bg-light">
+		<Form className="bg-light" onSubmit={(e) => e.preventDefault()}>
 			<Form.Row>
 				<Col className="col-lg-4 col-sm-12 m-auto p-4 ">
 					<Form.Control
@@ -13,7 +13,6 @@ const Search = ({ value, onValueChange }) => {
 						placeholder="Search Employee by Name"
 						value={value}
 						onChange={(e) => {
-							e.preventDefault();
 							onValueChange(e.target.value);
 						}}
 					/>
