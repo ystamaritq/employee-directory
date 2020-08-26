@@ -3,6 +3,7 @@
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	font-weight: bolder;
 	font-size: 16px;
+	background-color: white;
 }
 .text-custom-color {
 	color: #071939;
@@ -13,7 +14,7 @@ table {
 	width: 100%;
 	border-collapse: collapse;
 }
-/* Zebra striping */
+
 tr:nth-of-type(odd) {
 	background: #eee;
 }
@@ -39,7 +40,6 @@ th {
 		display: block;
 	}
 
-	/* Hide table headers (but not display: none;, for accessibility) */
 	thead tr {
 		position: absolute;
 		top: -9999px;
@@ -51,7 +51,6 @@ th {
 	}
 
 	td {
-		/* Behave  like a "row" */
 		border: none;
 		border-bottom: 1px solid #eee;
 		position: relative;
@@ -59,9 +58,7 @@ th {
 	}
 
 	td:before {
-		/* Now like a table header */
 		position: absolute;
-		/* Top/left values mimic padding */
 		top: 6px;
 		left: 6px;
 		width: 45%;
