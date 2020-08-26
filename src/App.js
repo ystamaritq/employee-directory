@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Search from "./components/Search/Search";
 import SearchTable from "./components/SearchTable/SearchTable";
 import axios from "axios";
+import { Container, Row, Col } from "react-bootstrap";
 
 const App = () => {
 	const [filteredUsers, setFilteredUsers] = useState([]);
@@ -76,18 +77,26 @@ const App = () => {
 	}, []);
 
 	return (
-		<div className="App">
-			<Header
-				title="Employee Directory"
-				subtitle="Click in the arrow to sort the users by name"
-			/>
-			<Search name="" onValueChange={(search) => filterUsersbyName(search)} />
-			<SearchTable
-				asc={sortAsc}
-				data={filteredUsers}
-				sort={() => sortFilteredUsersByName()}
-			/>
-		</div>
+		<Container fluid className="App px-0">
+			<Row>
+				<Col>
+					<Header
+						title="Employee Directory"
+						subtitle="Click in the arrow to sort the users by name"
+					/>
+					<Search
+						name=""
+						onValueChange={(search) => filterUsersbyName(search)}
+					/>
+
+					<SearchTable
+						asc={sortAsc}
+						data={filteredUsers}
+						sort={() => sortFilteredUsersByName()}
+					/>
+				</Col>
+			</Row>
+		</Container>
 	);
 };
 export default App;
