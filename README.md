@@ -1,8 +1,8 @@
 # Employee Directory
 
-![code climate](https://img.shields.io/codeclimate/coverage/ystamaritq/employee-directory)
-![ci/circle](https://img.shields.io/circleci/build/github/ystamaritq/employee-directory/master)
 ![GitHub language count](https://img.shields.io/github/languages/count/ystamaritq/employee-directory)
+[![CircleCI](https://circleci.com/gh/Zaccc123/awesome-cicd-react.svg?style=svg)](https://img.shields.io/circleci/build/github/ystamaritq/employee-directory/master)
+[![Code Climate](https://codeclimate.com/github/Zaccc123/awesome-cicd-react/badges/gpa.svg)](https://img.shields.io/codeclimate/coverage/ystamaritq/employee-directory)
 
 ### Table of Contents
 
