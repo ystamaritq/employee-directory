@@ -35,29 +35,49 @@ const SearchTable = ({ data, asc, sort }) => {
 					</tr>
 				</thead>
 				<tbody>
-					{data.map((user, i) => (
-						<tr key={i}>
+					{data.length ? (
+						data.map((user, i) => (
+							<tr key={i}>
+								<td>
+									<Image thumbnail src={user.picture.thumbnail} />
+								</td>
+								<td>
+									<div className="text-custom-color">
+										{user.name.first + " " + user.name.last}
+									</div>
+								</td>
+								<td>
+									<div className="text-custom-color">{user.phone}</div>
+								</td>
+								<td>
+									<div className="text-custom-color">{user.email}</div>
+								</td>
+								<td>
+									<div className="text-custom-color">
+										{new Date(user.dob.date).toLocaleDateString()}
+									</div>
+								</td>
+							</tr>
+						))
+					) : (
+						<tr>
 							<td>
-								<Image thumbnail src={user.picture.thumbnail} />
+								<span className="text-muted">no user image result</span>
 							</td>
 							<td>
-								<div className="text-custom-color">
-									{user.name.first + " " + user.name.last}
-								</div>
+								<span className="text-muted">no user name result</span>
 							</td>
 							<td>
-								<div className="text-custom-color">{user.phone}</div>
+								<span className="text-muted">no user phone result</span>
 							</td>
 							<td>
-								<div className="text-custom-color">{user.email}</div>
+								<span className="text-muted">no user email result</span>
 							</td>
 							<td>
-								<div className="text-custom-color">
-									{new Date(user.dob.date).toLocaleDateString()}
-								</div>
+								<span className="text-muted">no user dbo result</span>
 							</td>
 						</tr>
-					))}
+					)}
 				</tbody>
 			</Table>
 		</div>
