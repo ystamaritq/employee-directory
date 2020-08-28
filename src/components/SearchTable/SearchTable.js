@@ -13,20 +13,22 @@ const SearchTable = ({ data, asc, sort }) => {
 						<th className="custom-style-table-text">Image</th>
 						<th className="custom-style-table-text" onClick={sort}>
 							Name{" "}
-							{asc ? (
+							{data.length && asc ? (
 								<OverlayTrigger
 									placement="bottom"
 									overlay={<Tooltip id="tooltip-asc">Asc</Tooltip>}
 								>
 									<FontAwesomeIcon icon={faArrowDown} size="sm" />
 								</OverlayTrigger>
-							) : (
+							) : data.length ? (
 								<OverlayTrigger
 									placement="bottom"
 									overlay={<Tooltip id="tooltip-desc">Desc</Tooltip>}
 								>
 									<FontAwesomeIcon icon={faArrowUp} size="sm" />
 								</OverlayTrigger>
+							) : (
+								""
 							)}
 						</th>
 						<th className="custom-style-table-text">Phone</th>
